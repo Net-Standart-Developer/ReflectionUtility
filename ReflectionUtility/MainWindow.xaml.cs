@@ -20,13 +20,14 @@ namespace ReflectionUtility
     /// <summary>
     /// Логика взаимодействия для MainWindow.xaml
     /// </summary>
-    
     public partial class MainWindow : Window
     {
         
         ObservableCollection<string> dataList;
         string[] firstList;
         Assembly asm = null;
+
+        /// <summary>Инициализирует новый экземпляр класса <see cref="MainWindow"/>.</summary>
         public MainWindow()
         {
             InitializeComponent();
@@ -37,6 +38,9 @@ namespace ReflectionUtility
             Dlls.SelectedItem = dlls[0];
         }
 
+        /// <summary>Позволяет выбирать сборки для анализа типов.</summary>
+        /// <param name="sender">Источник события.</param>
+        /// <param name="e">Экземпляр <see cref="SelectionChangedEventArgs"/>, содержащий данные события.</param>
         private void Dlls_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             ComboBox comboBox = (ComboBox)sender;
@@ -52,6 +56,10 @@ namespace ReflectionUtility
             dataList.CopyTo(firstList, 0);
             Type_TextChanged(null, null);
         }
+
+        /// <summary>  Фильтрует типы сборки в соответствии с вводимым текстом.</summary>
+        /// <param name="sender">Источник события.</param>
+        /// <param name="e">Экземпляр <see cref="TextChangedEventArgs"/>, содержащий данные события.</param>
         private async void Type_TextChanged(object sender, TextChangedEventArgs e)
         {
             string pattern = Type.Text;
@@ -76,6 +84,9 @@ namespace ReflectionUtility
             }
         }
 
+        /// <summary>Анализирует заданный тип и выводит информацию о нём.</summary>
+        /// <param name="sender">Источник события.</param>
+        /// <param name="e">Экземпляр <see cref="SelectionChangedEventArgs"/>, содержащий данные события.</param>
         private void List_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if(list.SelectedItem != null)
@@ -355,6 +366,7 @@ namespace ReflectionUtility
                 data.Append("}");
                 text.Text = data.ToString();
 
+
                 string GetVisibility(MethodInfo m)
                 {
                     string visibility = "";
@@ -376,8 +388,6 @@ namespace ReflectionUtility
                         throw null;
                     var currentParameters = method.GetParameters();
 
-
-
                     var baseParameters = researchType.BaseType.GetMethods().Where(m => m.Name == method.Name && m.ReturnType == method.ReturnType
                      && m.GetParameters().Length == method.GetParameters().Length).FirstOrDefault()?.GetParameters();
                     if (baseParameters == null)
@@ -396,6 +406,10 @@ namespace ReflectionUtility
                 }
             }
         }
+
+        /// <summary>Добавляет данные о типах-generic для исследуемого типа.</summary>
+        /// <param name="type">Исследуемый тип.</param>
+        /// <returns>Строка данных о типах-generic.</returns>
         private string AddGenericTypes(Type type)
         {
             StringBuilder data = new StringBuilder();
@@ -411,6 +425,10 @@ namespace ReflectionUtility
             data.Append(">");
             return data.ToString();
         }
+        /// <summary>Добавляет данные о типах-generic для исследуемого метода.</summary>
+        /// <param name="method">Исследуемый метод.</param>
+        /// <returns>Строка данных о типах-generic.</returns>
+        /// <overloads>Добавляет данные о типах-generic.</overloads>
         private string AddGenericTypes(MethodInfo method)
         {
             StringBuilder data = new StringBuilder();
@@ -426,6 +444,10 @@ namespace ReflectionUtility
             data.Append(">");
             return data.ToString();
         }
+        /// <summary>Добавляет аттрибуты для исследуемого типа в строку data.</summary>
+        /// <param name="type">Исследуемый тип.</param>
+        /// <param name="data">Строка, куда будет добавлена информация.</param>
+        /// <overloads>Добавляет аттрибуты во входную строку</overloads>
         private void AddAttributes(Type type, StringBuilder data)
         {
             foreach (var atrib in type.CustomAttributes)
@@ -446,6 +468,9 @@ namespace ReflectionUtility
                 data.Append("]" + Environment.NewLine);
             }
         }
+        /// <summary>Добавляет аттрибуты для исследуемого члена в строку data.</summary>
+        /// <param name="member">Исследуемый член.</param>
+        /// <param name="data">Строка, куда будет добавлена информация.</param>
         private void AddAttributes(MemberInfo member, StringBuilder data) //выводит не все атрибуты, см. строку индексатор или например класс task
         {
             foreach (var atrib in member.CustomAttributes)
@@ -466,6 +491,11 @@ namespace ReflectionUtility
                 data.Append("]" + Environment.NewLine);
             }
         }
+
+        /// <summary>Добавляет аттрибуты для исследуемого члена в строку data с отступом indent.</summary>
+        /// <param name="member">Исследуемый член.</param>
+        /// <param name="data">Строка, куда будет добавлена информация.</param>
+        /// <param name="indent">Строка отступа.</param>
         private void AddAttributes(MemberInfo member, StringBuilder data, string indent)
         {
             foreach (var atrib in member.CustomAttributes)

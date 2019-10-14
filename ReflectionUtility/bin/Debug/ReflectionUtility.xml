@@ -1,0 +1,101 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ReflectionUtility</name>
+    </assembly>
+    <members>
+        <member name="T:ReflectionUtility.App">
+            <summary>
+            Логика взаимодействия для App.xaml
+            </summary>
+            <summary>
+            App
+            </summary>
+        </member>
+        <member name="M:ReflectionUtility.App.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="M:ReflectionUtility.App.Main">
+            <summary>
+            Application Entry Point.
+            </summary>
+        </member>
+        <member name="T:ReflectionUtility.MainWindow">
+            <summary>
+            Логика взаимодействия для MainWindow.xaml
+            </summary>
+            <summary>
+            MainWindow
+            </summary>
+        </member>
+        <member name="M:ReflectionUtility.MainWindow.#ctor">
+            <summary>Инициализирует новый экземпляр класса <see cref="T:ReflectionUtility.MainWindow"/>.</summary>
+        </member>
+        <member name="M:ReflectionUtility.MainWindow.Dlls_SelectionChanged(System.Object,System.Windows.Controls.SelectionChangedEventArgs)">
+            <summary>Позволяет выбирать сборки для анализа типов.</summary>
+            <param name="sender">Источник события.</param>
+            <param name="e">Экземпляр <see cref="T:System.Windows.Controls.SelectionChangedEventArgs"/>, содержащий данные события.</param>
+        </member>
+        <member name="M:ReflectionUtility.MainWindow.Type_TextChanged(System.Object,System.Windows.Controls.TextChangedEventArgs)">
+            <summary>  Фильтрует типы сборки в соответствии с вводимым текстом.</summary>
+            <param name="sender">Источник события.</param>
+            <param name="e">Экземпляр <see cref="T:System.Windows.Controls.TextChangedEventArgs"/>, содержащий данные события.</param>
+        </member>
+        <member name="M:ReflectionUtility.MainWindow.List_SelectionChanged(System.Object,System.Windows.Controls.SelectionChangedEventArgs)">
+            <summary>Анализирует заданный тип и выводит информацию о нём.</summary>
+            <param name="sender">Источник события.</param>
+            <param name="e">Экземпляр <see cref="T:System.Windows.Controls.SelectionChangedEventArgs"/>, содержащий данные события.</param>
+        </member>
+        <member name="M:ReflectionUtility.MainWindow.AddGenericTypes(System.Type)">
+            <summary>Добавляет данные о типах-generic для исследуемого типа.</summary>
+            <param name="type">Исследуемый тип.</param>
+            <returns>Строка данных о типах-generic.</returns>
+        </member>
+        <member name="M:ReflectionUtility.MainWindow.AddGenericTypes(System.Reflection.MethodInfo)">
+            <summary>Добавляет данные о типах-generic для исследуемого метода.</summary>
+            <param name="method">Исследуемый метод.</param>
+            <returns>Строка данных о типах-generic.</returns>
+            <overloads>Добавляет данные о типах-generic.</overloads>
+        </member>
+        <member name="M:ReflectionUtility.MainWindow.AddAttributes(System.Type,System.Text.StringBuilder)">
+            <summary>Добавляет аттрибуты для исследуемого типа в строку data.</summary>
+            <param name="type">Исследуемый тип.</param>
+            <param name="data">Строка, куда будет добавлена информация.</param>
+            <overloads>Добавляет аттрибуты во входную строку</overloads>
+        </member>
+        <member name="M:ReflectionUtility.MainWindow.AddAttributes(System.Reflection.MemberInfo,System.Text.StringBuilder)">
+            <summary>Добавляет аттрибуты для исследуемого члена в строку data.</summary>
+            <param name="member">Исследуемый член.</param>
+            <param name="data">Строка, куда будет добавлена информация.</param>
+        </member>
+        <member name="M:ReflectionUtility.MainWindow.AddAttributes(System.Reflection.MemberInfo,System.Text.StringBuilder,System.String)">
+            <summary>Добавляет аттрибуты для исследуемого члена в строку data с отступом indent.</summary>
+            <param name="member">Исследуемый член.</param>
+            <param name="data">Строка, куда будет добавлена информация.</param>
+            <param name="indent">Строка отступа.</param>
+        </member>
+        <member name="M:ReflectionUtility.MainWindow.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:ReflectionUtility.Properties.Resources">
+            <summary>
+              Класс ресурсов со строгим типом для поиска локализованных строк и пр.
+            </summary>
+        </member>
+        <member name="P:ReflectionUtility.Properties.Resources.ResourceManager">
+            <summary>
+              Возврат кэшированного экземпляра ResourceManager, используемого этим классом.
+            </summary>
+        </member>
+        <member name="P:ReflectionUtility.Properties.Resources.Culture">
+            <summary>
+              Переопределяет свойство CurrentUICulture текущего потока для всех
+              подстановки ресурсов с помощью этого класса ресурсов со строгим типом.
+            </summary>
+        </member>
+    </members>
+</doc>
