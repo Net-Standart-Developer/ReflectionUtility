@@ -1,0 +1,14 @@
+C:\Users\Админ\source\repos\ReflectionUtility\ReflectionUtility\bin\Debug\ReflectionUtility.exe.config
+C:\Users\Админ\source\repos\ReflectionUtility\ReflectionUtility\bin\Debug\ReflectionUtility.exe
+C:\Users\Админ\source\repos\ReflectionUtility\ReflectionUtility\bin\Debug\ReflectionUtility.pdb
+C:\Users\Админ\source\repos\ReflectionUtility\ReflectionUtility\obj\Debug\ReflectionUtility.csprojAssemblyReference.cache
+C:\Users\Админ\source\repos\ReflectionUtility\ReflectionUtility\obj\Debug\MainWindow.g.cs
+C:\Users\Админ\source\repos\ReflectionUtility\ReflectionUtility\obj\Debug\App.g.cs
+C:\Users\Админ\source\repos\ReflectionUtility\ReflectionUtility\obj\Debug\ReflectionUtility_MarkupCompile.cache
+C:\Users\Админ\source\repos\ReflectionUtility\ReflectionUtility\obj\Debug\ReflectionUtility_MarkupCompile.lref
+C:\Users\Админ\source\repos\ReflectionUtility\ReflectionUtility\obj\Debug\MainWindow.baml
+C:\Users\Админ\source\repos\ReflectionUtility\ReflectionUtility\obj\Debug\ReflectionUtility.g.resources
+C:\Users\Админ\source\repos\ReflectionUtility\ReflectionUtility\obj\Debug\ReflectionUtility.Properties.Resources.resources
+C:\Users\Админ\source\repos\ReflectionUtility\ReflectionUtility\obj\Debug\ReflectionUtility.csproj.GenerateResource.cache
+C:\Users\Админ\source\repos\ReflectionUtility\ReflectionUtility\obj\Debug\ReflectionUtility.exe
+C:\Users\Админ\source\repos\ReflectionUtility\ReflectionUtility\obj\Debug\ReflectionUtility.pdb
